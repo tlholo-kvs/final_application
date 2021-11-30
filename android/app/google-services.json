@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "304046717279",
+    "firebase_url": "https://giftmeapplication-cedbc-default-rtdb.firebaseio.com",
+    "project_id": "giftmeapplication-cedbc",
+    "storage_bucket": "giftmeapplication-cedbc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304046717279:android:010e04bc01ec76044fdeea",
+        "android_client_info": {
+          "package_name": "com.example.final_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304046717279-7mm8576caur6klgqc2vmcjl0etnes63t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-ypA_a99v2Qz7_2My2pqjmwNUAjlolcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304046717279-7mm8576caur6klgqc2vmcjl0etnes63t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
