@@ -5,7 +5,6 @@ import 'package:final_application/screens/AuthScreen/get_items.dart';
 import 'package:final_application/screens/AuthScreen/home.dart';
 import 'package:final_application/screens/AuthScreen/item_donated.dart';
 import 'package:final_application/screens/AuthScreen/main_page2.dart';
-import 'package:final_application/screens/AuthScreen/navigation_drawer_widget.dart';
 import 'package:final_application/screens/AuthScreen/profile.dart';
 import 'package:final_application/screens/AuthScreen/request_main.dart';
 import 'package:final_application/screens/AuthScreen/request_main2.dart';
@@ -169,7 +168,6 @@ class _RequestedItemsState extends State<RequestedItems> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
@@ -216,8 +214,7 @@ class _RequestedItemsState extends State<RequestedItems> {
                 children: [
                   SizedBox(height: 10),
                   StreamBuilder<QuerySnapshot>(
-                      stream: rCollection2
-                          .snapshots(),
+                      stream: rCollection2.snapshots(),
                       builder:
                           (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasData) {
@@ -237,19 +234,21 @@ class _RequestedItemsState extends State<RequestedItems> {
                                   final title = data.get('title');
                                   final time = data.get('time');
                                   final description = data.get('description');
-                                  
+
                                   return ListTile(
                                     onTap: () {
-                                       Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => ViewRequest2(title: title,description: description,time: time,)),
-                                        );
-                                      },
-                                  
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => ViewRequest2(
+                                                  title: title,
+                                                  description: description,
+                                                  time: time,
+                                                )),
+                                      );
+                                    },
                                     title: Text(title),
                                     subtitle: Text('$time'),
-                                    
                                   );
                                 })
                               ]),
@@ -265,7 +264,6 @@ class _RequestedItemsState extends State<RequestedItems> {
                           );
                         }
                       }),
-                  
                 ],
               ),
             ),
@@ -276,20 +274,16 @@ class _RequestedItemsState extends State<RequestedItems> {
                   Icon(Icons.arrow_left),
                   FlatButton(
                       onPressed: () {
-
-                       Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ItemDonated()),
-                              );
-
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ItemDonated()),
+                        );
                       },
                       child: Text(
                         "Donations",
                         style: TextStyle(color: Colors.blue),
                       )),
-
-                      
                 ],
               ),
             ),
@@ -322,8 +316,10 @@ class _RequestedItemsState extends State<RequestedItems> {
                 onTap: (index) {
                   setState(() {
                     if (index == 0) {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => RequestedItems()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RequestedItems()));
                     } else if (index == 1) {
                       Navigator.push(
                           context,

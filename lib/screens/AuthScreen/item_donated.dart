@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_application/screens/AuthScreen/create_item.dart';
 import 'package:final_application/screens/AuthScreen/get_items.dart';
 import 'package:final_application/screens/AuthScreen/main_page2.dart';
-import 'package:final_application/screens/AuthScreen/navigation_drawer_widget.dart';
 import 'package:final_application/screens/AuthScreen/requested_items.dart';
 import 'package:final_application/screens/AuthScreen/userProfile.dart';
 import 'package:final_application/screens/AuthScreen/view_donated_item.dart';
@@ -166,7 +165,6 @@ class _ItemDonatedState extends State<ItemDonated> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,

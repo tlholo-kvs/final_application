@@ -5,7 +5,6 @@ import 'package:final_application/screens/AuthScreen/get_items.dart';
 import 'package:final_application/screens/AuthScreen/home.dart';
 import 'package:final_application/screens/AuthScreen/item_donated.dart';
 import 'package:final_application/screens/AuthScreen/main_page2.dart';
-import 'package:final_application/screens/AuthScreen/navigation_drawer_widget.dart';
 import 'package:final_application/screens/AuthScreen/profile.dart';
 import 'package:final_application/screens/AuthScreen/request_main.dart';
 import 'package:final_application/screens/AuthScreen/request_main2.dart';
@@ -200,7 +199,6 @@ class _ManageRequestsState extends State<ManageRequests> {
                     )),
               ),
             ),
-            
             Padding(
               padding: const EdgeInsets.only(left: 80, top: 20),
               child: Text(
@@ -215,8 +213,7 @@ class _ManageRequestsState extends State<ManageRequests> {
                 children: [
                   SizedBox(height: 10),
                   StreamBuilder<QuerySnapshot>(
-                      stream: rCollection2
-                          .snapshots(),
+                      stream: rCollection2.snapshots(),
                       builder:
                           (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasData) {
@@ -235,21 +232,28 @@ class _ManageRequestsState extends State<ManageRequests> {
                                 ...snapshot.data.docs.map((data) {
                                   final title = data.get('title');
                                   final time = data.get('time');
-                                   final description = data.get('description');
+                                  final description = data.get('description');
 
                                   String id = data.id;
-                                  
+
                                   return ListTile(
                                     title: Text(title),
                                     subtitle: Text('$time'),
-                                    trailing: IconButton(onPressed: () {
-                                        DbHelper2().delete2(id: id, title: title, desciption: description).then((value) {
-                                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(value)));
-
+                                    trailing: IconButton(
+                                      onPressed: () {
+                                        DbHelper2()
+                                            .delete2(
+                                                id: id,
+                                                title: title,
+                                                desciption: description)
+                                            .then((value) {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(SnackBar(
+                                                  content: Text(value)));
                                         });
-
-                                      },icon: Icon(Icons.delete),),
-                                    
+                                      },
+                                      icon: Icon(Icons.delete),
+                                    ),
                                   );
                                 })
                               ]),
@@ -265,12 +269,9 @@ class _ManageRequestsState extends State<ManageRequests> {
                           );
                         }
                       }),
-                  
                 ],
               ),
             ),
-            
-            
           ],
         ),
       ),

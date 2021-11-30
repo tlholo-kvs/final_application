@@ -1,12 +1,10 @@
 import 'package:final_application/screens/AuthScreen/donation_options.dart';
 import 'package:final_application/screens/AuthScreen/home.dart';
-import 'package:final_application/screens/AuthScreen/navigation_drawer_widget.dart';
 import 'package:final_application/screens/AuthScreen/non_food_items.dart';
 import 'package:final_application/screens/AuthScreen/profile.dart';
 import 'package:final_application/screens/AuthScreen/request_main.dart';
 import 'package:final_application/styles/app_colors.dart';
 import 'package:flutter/material.dart';
-
 
 class RequestMain2 extends StatefulWidget {
   _RequestMainState2 createState() => _RequestMainState2();
@@ -86,8 +84,10 @@ class _RequestMainState2 extends State<RequestMain2> {
                   padding: const EdgeInsets.only(top: 50, left: 200),
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => NonFoodItems()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NonFoodItems()));
                     },
                     child: Text(
                       'Assist',
@@ -151,7 +151,7 @@ class _RequestMainState2 extends State<RequestMain2> {
         TextButton(
             onPressed: () {
               Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => RequestMain()));
+                  MaterialPageRoute(builder: (context) => RequestMain()));
             },
             child: Text(
               'Food Items',
@@ -185,7 +185,6 @@ class _RequestMainState2 extends State<RequestMain2> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
@@ -237,8 +236,10 @@ class _RequestMainState2 extends State<RequestMain2> {
                         ),
                         TextButton(
                             onPressed: () {
-                               Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage()));
                             },
                             child: Text(
                               'Donations',
@@ -280,26 +281,24 @@ class _RequestMainState2 extends State<RequestMain2> {
                   ],
                   onTap: (index) {
                     setState(() {
-
-                      if(index == 0)
-                      {
-                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
-                      }
-                      else if(index == 2)
-                      {
-                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => DonationOptions()));
-                      }
-                      else if(index == 3)
-                      {
-                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Profile()));
-                      }
-                      else{
-                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => RequestMain2()));
-
+                      if (index == 0) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                      } else if (index == 2) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DonationOptions()));
+                      } else if (index == 3) {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Profile()));
+                      } else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RequestMain2()));
                       }
                       _currentpos = index;
                     });
