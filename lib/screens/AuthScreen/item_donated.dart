@@ -15,7 +15,7 @@ import 'package:final_application/screens/AuthScreen/userProfile.dart';
 import 'package:final_application/screens/AuthScreen/user_profile.dart';
 import 'package:final_application/screens/AuthScreen/view_donated_item.dart';
 import 'package:final_application/screens/AuthScreen/view_donation2.dart';
-import 'package:final_application/screens/EventScreen.dart';
+import 'package:final_application/screens/event_screen.dart';
 import 'package:final_application/styles/app_colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
