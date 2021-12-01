@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:final_application/provider/db_service.dart';
 import 'package:final_application/provider/db_service2.dart';
 import 'package:final_application/screens/AuthScreen/requested_items.dart';
@@ -328,4 +327,38 @@ class _CreateRequestState extends State<CreateRequest> {
       ),
     );
   }
+}
+
+//This is a disclaimer that will pop up before a user is able to create a donation
+//request just to remind them quickly of the terms of use for requesting donations on the app
+showDisclaimerDialog(BuildContext context) {
+  // set up the button
+  Widget okButton = TextButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.of(context, rootNavigator: true).pop();
+    },
+  );
+
+  //setting up the AlertDialog in terms of a title, content and actions
+  AlertDialog confDialog = AlertDialog(
+    title: Text("Disclaimer!!"),
+    content: Text(
+        "By creating a donation request, you agree to follow the terms of use as stated by GiftMe."
+        "+\n Before a donation request will be approved to appear on a feed, it will be moderated according to a set of rules that every item must follow."
+        "+\n Should you feel that your donation request was erronousely rejected by the admin, you can email them at admin@giftme.co.za"
+        "+\n Press OK to continue"),
+    actions: [
+      okButton,
+    ],
+  );
+
+  //This method will show the actual dialog
+  showDialog(
+    barrierColor: Colors.blue,
+    context: context,
+    builder: (BuildContext context) {
+      return confDialog;
+    },
+  );
 }

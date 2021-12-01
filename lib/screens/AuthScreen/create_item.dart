@@ -14,7 +14,6 @@ class CreateItem extends StatefulWidget {
   _CreateItemState createState() => _CreateItemState();
 
   CreateItem({Key key}) : super(key: key);
-  
 }
 
 class _CreateItemState extends State<CreateItem> {
@@ -38,7 +37,7 @@ class _CreateItemState extends State<CreateItem> {
 
   String downloadURL;
 
-  //Image Picker 
+  //Image Picker
 
   Future imagePickerMethod() async {
     final image = await ImagePicker.pickImage(source: ImageSource.gallery);
@@ -138,72 +137,8 @@ class _CreateItemState extends State<CreateItem> {
     );
   }
 
-  Widget _buildNamer4() {
-    return Padding(
-      padding: EdgeInsets.all(8),
-      child: TextFormField(
-        keyboardType: TextInputType.emailAddress,
-        onChanged: (value) {
-          setState(() {
-            email = value;
-          });
-        },
-        decoration: InputDecoration(
-            //border: InputBorder.none,
-            contentPadding: EdgeInsets.only(top: 14),
-            prefixIcon: Icon(Icons.hourglass_bottom, color: Colors.blue[300]),
-            hintText: "Use Before",
-            //importing the hintStyleColor
-            hintStyle: TextStyle(color: AppColors.hintStyleColour)),
-      ),
-    );
-  }
-
   Widget _buildImage() {
     return Icon(Icons.add_a_photo_rounded, size: 80);
-  }
-
-  Widget _buildRating() {
-    return Row(
-      children: [
-        //All of the Icons import the yellowIconsColor from AppColors
-        Icon(
-          Icons.star_outline,
-          size: 30,
-          color: AppColors.yellowIconsColor,
-        ),
-        Icon(
-          Icons.star_outline,
-          size: 30,
-          color: AppColors.yellowIconsColor,
-        ),
-        Icon(
-          Icons.star_outline,
-          size: 30,
-          color: AppColors.yellowIconsColor,
-        ),
-        Icon(
-          Icons.star_outline,
-          size: 30,
-          color: AppColors.yellowIconsColor,
-        ),
-        Icon(
-          Icons.star_outline,
-          size: 30,
-          color: AppColors.yellowIconsColor,
-        ),
-      ],
-    );
-  }
-
-  Widget _buildDivider() {
-    return Divider(
-      //importing the grey Divider color
-      color: AppColors.dividerColorGrey,
-      thickness: 1.2,
-      indent: 5,
-      endIndent: 5,
-    );
   }
 
   Widget _buildSubmitButton() {
@@ -222,14 +157,13 @@ class _CreateItemState extends State<CreateItem> {
                   elevation: 5.0,
                 ),
                 onPressed: () async {
-                  
-    Reference ref = FirebaseStorage.instance.ref().child(user.uid);
-    await ref.putFile(_image);
+                  Reference ref =
+                      FirebaseStorage.instance.ref().child(user.uid);
+                  await ref.putFile(_image);
 
-    downloadURL = await ref.getDownloadURL();
-    downloadURL.toString();
-    print(downloadURL);
-
+                  downloadURL = await ref.getDownloadURL();
+                  downloadURL.toString();
+                  print(downloadURL);
 
                   if (!key.currentState.validate()) {
                     print(title.text);
@@ -242,7 +176,7 @@ class _CreateItemState extends State<CreateItem> {
                         .add(
                             title: title.text.trim(),
                             desciption: description.text.trim(),
-                            imageUrl: downloadURL )
+                            imageUrl: downloadURL)
                         .then((value) {
                       ScaffoldMessenger.of(context)
                           .showSnackBar(SnackBar(content: Text(value)));
