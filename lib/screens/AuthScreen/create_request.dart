@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:final_application/provider/db_service.dart';
 import 'package:final_application/provider/db_service2.dart';
 import 'package:final_application/screens/AuthScreen/requested_items.dart';
-import 'package:final_application/screens/AuthScreen/splashScreen3.dart';
+import 'package:final_application/screens/AuthScreen/successful_donation_screen.dart';
 import 'package:final_application/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -26,21 +26,16 @@ class _CreateRequestState extends State<CreateRequest> {
   TextEditingController title = TextEditingController();
   TextEditingController description = TextEditingController();
 
-   File _image;
+  File _image;
 
-   Future _getImage() async {
+  Future _getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-
-
 
     setState(() {
       _image = image;
       print('_image: $_image');
     });
   }
-  
-
-
 
   Widget _buildNamer() {
     return Padding(
@@ -202,15 +197,14 @@ class _CreateRequestState extends State<CreateRequest> {
                         .then((value) {
                       ScaffoldMessenger.of(context)
                           .showSnackBar(SnackBar(content: Text(value)));
-
-
                     });
 
-                    Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => RequestedItems()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RequestedItems()));
                   }
                 },
-
                 child: Text(
                   'Submit',
                   style: TextStyle(
@@ -284,7 +278,6 @@ class _CreateRequestState extends State<CreateRequest> {
                         bottomRight: const Radius.circular(40),
                       ))),
             ),
-            
             Padding(
                 padding: EdgeInsets.only(left: 140, top: 40),
                 child: Text(
@@ -295,7 +288,6 @@ class _CreateRequestState extends State<CreateRequest> {
                     fontSize: 25,
                   ),
                 )),
-                
             Form(
               key: key,
               child: Column(
@@ -312,7 +304,6 @@ class _CreateRequestState extends State<CreateRequest> {
                   // ),
                   SizedBox(height: 10),
 
-                  
                   SizedBox(height: 5),
                   _buildSubmitButton(),
                 ],

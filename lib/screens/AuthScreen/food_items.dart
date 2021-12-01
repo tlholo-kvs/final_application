@@ -1,7 +1,6 @@
-import 'package:final_application/screens/AuthScreen/splashScreen3.dart';
+import 'package:final_application/screens/AuthScreen/successful_donation_screen.dart';
 import 'package:final_application/styles/app_colors.dart';
 import 'package:flutter/material.dart';
-
 
 class FoodItems extends StatefulWidget {
   @override
@@ -67,7 +66,7 @@ class FoodItemsState extends State<FoodItems> {
         decoration: InputDecoration(
           //border: InputBorder.none,
           contentPadding: EdgeInsets.only(top: 14),
-          prefixIcon: Icon(Icons.keyboard, color:  Colors.blue[300]),
+          prefixIcon: Icon(Icons.keyboard, color: Colors.blue[300]),
           hintText: "Item Name",
           //importing the hintStyle colour
           hintStyle: TextStyle(color: AppColors.hintStyleColour),
@@ -89,7 +88,7 @@ class FoodItemsState extends State<FoodItems> {
         decoration: InputDecoration(
           //border: InputBorder.none,
           contentPadding: EdgeInsets.only(top: 14),
-          prefixIcon: Icon(Icons.description, color:  Colors.blue[300]),
+          prefixIcon: Icon(Icons.description, color: Colors.blue[300]),
           hintText: "Description",
           //importing the hintStyle color
           hintStyle: TextStyle(color: AppColors.hintStyleColour),
@@ -204,8 +203,10 @@ class FoodItemsState extends State<FoodItems> {
                   elevation: 5.0,
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SplashScreen3()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SuccessfulDonationScreen()));
                 },
                 child: Text(
                   'Submit',

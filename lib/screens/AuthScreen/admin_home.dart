@@ -1,4 +1,3 @@
-
 import 'package:final_application/screens/AuthScreen/create_event.dart';
 import 'package:final_application/provider/auth_provider.dart';
 import 'package:final_application/screens/AuthScreen/login.dart';
@@ -12,8 +11,8 @@ import 'package:final_application/screens/AuthScreen/donation_review.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../EventScreen.dart';
-import '../HomeScreen.dart';
+import '../event_screen.dart';
+import '../event_home_screen.dart';
 
 class Admin extends StatefulWidget {
   _AdminState createState() => _AdminState();
@@ -29,9 +28,9 @@ class _AdminState extends State<Admin> {
           child: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ReviewDonations()),
-                  );
+                context,
+                MaterialPageRoute(builder: (context) => ReviewDonations()),
+              );
             },
             child: Container(
               height: 150,
@@ -59,7 +58,7 @@ class _AdminState extends State<Admin> {
     );
   }
 
-   Widget _ManageRequests() {
+  Widget _ManageRequests() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -68,9 +67,9 @@ class _AdminState extends State<Admin> {
           child: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ManageRequests()),
-                  );
+                context,
+                MaterialPageRoute(builder: (context) => ManageRequests()),
+              );
             },
             child: Container(
               height: 150,
@@ -107,9 +106,9 @@ class _AdminState extends State<Admin> {
           child: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ReviewRequest()),
-                  );
+                context,
+                MaterialPageRoute(builder: (context) => ReviewRequest()),
+              );
             },
             child: Container(
               height: 150,
@@ -145,10 +144,10 @@ class _AdminState extends State<Admin> {
           padding: const EdgeInsets.only(top: 180),
           child: GestureDetector(
             onTap: () {
-               Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ManageDonations()),
-                  );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ManageDonations()),
+              );
             },
             child: Container(
               height: 150,
@@ -193,10 +192,9 @@ class _AdminState extends State<Admin> {
           child: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ManageDonations()),
-                  );
-
+                context,
+                MaterialPageRoute(builder: (context) => ManageDonations()),
+              );
             },
             child: Container(
               height: 150,
@@ -241,10 +239,9 @@ class _AdminState extends State<Admin> {
           child: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ManageRequests()),
-                  );
-
+                context,
+                MaterialPageRoute(builder: (context) => ManageRequests()),
+              );
             },
             child: Container(
               height: 150,
@@ -350,12 +347,13 @@ class _AdminState extends State<Admin> {
                     AuthClass().SignOut();
                     Navigator.pushAndRemoveUntil(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => LoginPage()),
+                        MaterialPageRoute(builder: (context) => LoginPage()),
                         (route) => false);
                   },
                   icon: Icon(
-                    Icons.power_settings_new, color: Colors.white,size: 35,
+                    Icons.power_settings_new,
+                    color: Colors.white,
+                    size: 35,
                   )),
             ),
             Padding(
@@ -429,20 +427,22 @@ class _AdminState extends State<Admin> {
               padding: const EdgeInsets.only(top: 850, left: 280),
               child: Row(
                 children: [
-                  FlatButton(onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ManageEvents()),
+                  FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ManageEvents()),
                         );
-
-                  }, child: Text("Events", style: TextStyle(color: Colors.blue),)),
-                  
+                      },
+                      child: Text(
+                        "Events",
+                        style: TextStyle(color: Colors.blue),
+                      )),
                   Icon(Icons.arrow_right)
                 ],
               ),
             )
-            
           ],
         ),
       ),

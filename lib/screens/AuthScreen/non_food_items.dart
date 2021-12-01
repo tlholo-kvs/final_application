@@ -1,7 +1,6 @@
-import 'package:final_application/screens/AuthScreen/splashScreen3.dart';
+import 'package:final_application/screens/AuthScreen/successful_donation_screen.dart';
 import 'package:final_application/styles/app_colors.dart';
 import 'package:flutter/material.dart';
-
 
 class NonFoodItems extends StatefulWidget {
   @override
@@ -111,7 +110,7 @@ class NonFoodItemsState extends State<NonFoodItems> {
         decoration: InputDecoration(
             //border: InputBorder.none,
             contentPadding: EdgeInsets.only(top: 14),
-            prefixIcon: Icon(Icons.lock_clock,  color: Colors.blue[300]),
+            prefixIcon: Icon(Icons.lock_clock, color: Colors.blue[300]),
             hintText: "Drop Off Time",
             //importing the black hintStyleColor
             hintStyle: TextStyle(color: AppColors.hintStyleColour)),
@@ -183,8 +182,10 @@ class NonFoodItemsState extends State<NonFoodItems> {
                   primary: AppColors.eButtonColBlue,
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SplashScreen3()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SuccessfulDonationScreen()));
                 },
                 child: Text(
                   'Submit',

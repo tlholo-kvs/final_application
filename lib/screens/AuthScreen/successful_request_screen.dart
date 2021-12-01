@@ -3,16 +3,14 @@ import 'package:final_application/screens/AuthScreen/home.dart';
 import 'package:flutter/material.dart';
 //import 'package:project_gift_me/pages/login.dart';
 
-
-
-class SplashScreen4 extends StatefulWidget {
+class SuccessfulRequestScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return StartState4();
   }
 }
 
-class StartState4 extends State<SplashScreen4> {
+class StartState4 extends State<SuccessfulRequestScreen> {
   @override
   void initState() {
     super.initState();
@@ -25,8 +23,8 @@ class StartState4 extends State<SplashScreen4> {
   }
 
   route() {
-    Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 
   @override
@@ -40,7 +38,12 @@ class StartState4 extends State<SplashScreen4> {
               SizedBox(
                 height: 20,
               ),
-              Text('Your Donation Request Will Be Reviewed...Thank You')
+              Text(
+                'Your Donation Request Will Be Reviewed...Thank You',
+                style: Theme.of(context).textTheme.bodyText1.copyWith(
+                      color: Colors.white,
+                    ),
+              ),
             ],
           ),
         ));

@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_application/provider/db_service.dart';
 import 'package:final_application/screens/AuthScreen/get_items.dart';
 import 'package:final_application/screens/AuthScreen/main_page2.dart';
-import 'package:final_application/screens/AuthScreen/navigation_drawer_widget.dart';
 
 import 'package:final_application/styles/app_colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -179,9 +178,7 @@ class _ManageDonationState extends State<ManageDonations> {
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
-
           ),
-          
         ),
         body: Stack(
           children: [
@@ -196,22 +193,22 @@ class _ManageDonationState extends State<ManageDonations> {
                       bottomRight: const Radius.circular(40),
                     )),
               ),
-              
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 60,top: 20),
-              child: Text("Manage Donations", style: TextStyle(color: Colors.white, fontSize: 30),),
+              padding: const EdgeInsets.only(left: 60, top: 20),
+              child: Text(
+                "Manage Donations",
+                style: TextStyle(color: Colors.white, fontSize: 30),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 80, left: 22),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                 
                   SizedBox(height: 10),
                   StreamBuilder<QuerySnapshot>(
-                      stream: dbCollection2
-                          .snapshots(),
+                      stream: dbCollection2.snapshots(),
                       builder:
                           (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasData) {
@@ -236,13 +233,21 @@ class _ManageDonationState extends State<ManageDonations> {
                                   return ListTile(
                                     title: Text(title),
                                     subtitle: Text('$time'),
-                                    trailing: IconButton(onPressed: () {
-                                        DbHelper().delete2(id: id, title: title, desciption: description).then((value) {
-                                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(value)));
-
+                                    trailing: IconButton(
+                                      onPressed: () {
+                                        DbHelper()
+                                            .delete2(
+                                                id: id,
+                                                title: title,
+                                                desciption: description)
+                                            .then((value) {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(SnackBar(
+                                                  content: Text(value)));
                                         });
-
-                                      },icon: Icon(Icons.delete),),
+                                      },
+                                      icon: Icon(Icons.delete),
+                                    ),
                                     leading: Icon(Icons.photo, size: 40),
                                   );
                                 })
@@ -259,7 +264,6 @@ class _ManageDonationState extends State<ManageDonations> {
                           );
                         }
                       }),
-                  
                 ],
               ),
             ),

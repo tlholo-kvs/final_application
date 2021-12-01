@@ -1,7 +1,6 @@
-
 import 'package:final_application/Modules/Data.dart';
 import 'package:final_application/Modules/Event.dart';
-import 'package:final_application/Widgets/HomeEventContainer.dart';
+import 'package:final_application/Widgets/home_event_container.dart';
 import 'package:flutter/material.dart';
 
 class EventHomeScreen extends StatefulWidget {

@@ -1,18 +1,17 @@
 import 'dart:async';
-import 'package:final_application/screens/AuthScreen/home.dart';
 import 'package:final_application/screens/AuthScreen/item_donated.dart';
+import 'package:final_application/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 //import 'package:project_gift_me/pages/login.dart';
 
-
-class SplashScreen3 extends StatefulWidget {
+class SuccessfulDonationScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return StartState3();
   }
 }
 
-class StartState3 extends State<SplashScreen3> {
+class StartState3 extends State<SuccessfulDonationScreen> {
   @override
   void initState() {
     super.initState();
@@ -25,14 +24,14 @@ class StartState3 extends State<SplashScreen3> {
   }
 
   route() {
-    Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => ItemDonated()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ItemDonated()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.kPrimaryColor,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +40,11 @@ class StartState3 extends State<SplashScreen3> {
                 height: 20,
               ),
               Text(
-                  'Thank You for Making a Donation...Your Donation Will Be Reviewed')
+                'Thank You for Making a Donation...Your Donation Will Be Reviewed',
+                style: Theme.of(context).textTheme.bodyText1.copyWith(
+                      color: Colors.white,
+                    ),
+              ),
             ],
           ),
         ));

@@ -1,13 +1,11 @@
 import 'package:final_application/screens/AuthScreen/donation_options.dart';
 import 'package:final_application/screens/AuthScreen/get_item2.dart';
 import 'package:final_application/screens/AuthScreen/home.dart';
-import 'package:final_application/screens/AuthScreen/navigation_drawer_widget.dart';
 import 'package:final_application/screens/AuthScreen/profile.dart';
 import 'package:final_application/screens/AuthScreen/request_main.dart';
 import 'package:final_application/screens/AuthScreen/request_main2.dart';
 import 'package:final_application/styles/app_colors.dart';
 import 'package:flutter/material.dart';
-
 
 class MainPage2 extends StatefulWidget {
   _MainPageState2 createState() => _MainPageState2();
@@ -97,8 +95,8 @@ class _MainPageState2 extends State<MainPage2> {
             ),
           ),
           onTap: () {
-            Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => GetItem2()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => GetItem2()));
           }),
     );
   }
@@ -278,8 +276,8 @@ class _MainPageState2 extends State<MainPage2> {
         SizedBox(width: 25),
         TextButton(
             onPressed: () {
-               Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
             },
             child: Text(
               'Food Items',
@@ -311,7 +309,6 @@ class _MainPageState2 extends State<MainPage2> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
@@ -360,8 +357,10 @@ class _MainPageState2 extends State<MainPage2> {
                       children: [
                         TextButton(
                             onPressed: () {
-                               Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => RequestMain()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => RequestMain()));
                             },
                             child: Text(
                               'Requests',
@@ -407,11 +406,15 @@ class _MainPageState2 extends State<MainPage2> {
                   onTap: (index) {
                     setState(() {
                       if (index == 0) {
-                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
                       } else if (index == 2) {
-                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => DonationOptions()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DonationOptions()));
                       }
                       //Why : This piece of code was causing an error. IDK
                       //why its here if it doesn't contain an index. When I change
@@ -422,10 +425,12 @@ class _MainPageState2 extends State<MainPage2> {
                       // }
                       else if (index == 3) {
                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Profile()));
+                            MaterialPageRoute(builder: (context) => Profile()));
                       } else {
-                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => RequestMain2()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RequestMain2()));
                       }
                       _currentpos = index;
                     });

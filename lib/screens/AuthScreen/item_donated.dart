@@ -1,21 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:final_application/screens/AuthScreen/create_event.dart';
 import 'package:final_application/screens/AuthScreen/create_item.dart';
-import 'package:final_application/screens/AuthScreen/donation_options.dart';
 import 'package:final_application/screens/AuthScreen/get_items.dart';
-import 'package:final_application/screens/AuthScreen/home.dart';
 import 'package:final_application/screens/AuthScreen/main_page2.dart';
-import 'package:final_application/screens/AuthScreen/navigation_drawer_widget.dart';
-import 'package:final_application/screens/AuthScreen/profile.dart';
-import 'package:final_application/screens/AuthScreen/request_main.dart';
-import 'package:final_application/screens/AuthScreen/request_main2.dart';
-import 'package:final_application/screens/AuthScreen/request_review.dart';
 import 'package:final_application/screens/AuthScreen/requested_items.dart';
 import 'package:final_application/screens/AuthScreen/userProfile.dart';
-import 'package:final_application/screens/AuthScreen/user_profile.dart';
 import 'package:final_application/screens/AuthScreen/view_donated_item.dart';
-import 'package:final_application/screens/AuthScreen/view_donation2.dart';
-import 'package:final_application/screens/EventScreen.dart';
+import 'package:final_application/screens/event_screen.dart';
 import 'package:final_application/styles/app_colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -175,7 +165,6 @@ class _ItemDonatedState extends State<ItemDonated> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,

@@ -1,6 +1,5 @@
-
 import 'package:final_application/Modules/Event.dart';
-import 'package:final_application/screens/EventScreen.dart';
+import 'package:final_application/screens/event_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeEventContainer extends StatelessWidget {
