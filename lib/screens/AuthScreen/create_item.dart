@@ -137,10 +137,6 @@ class _CreateItemState extends State<CreateItem> {
     );
   }
 
-  Widget _buildImage() {
-    return Icon(Icons.add_a_photo_rounded, size: 80);
-  }
-
   Widget _buildSubmitButton() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -195,49 +191,6 @@ class _CreateItemState extends State<CreateItem> {
                   ),
                 )))
       ],
-    );
-  }
-
-  Widget _buildText() {
-    return Text(
-      'Quality',
-      style: TextStyle(
-        //importing the grey text colour
-        color: AppColors.greyTextColour,
-        fontSize: 16,
-      ),
-    );
-  }
-
-  Widget _buildText2() {
-    return Padding(
-      padding: EdgeInsets.only(right: 180),
-      child: Text(
-        'Anonymous',
-        style: TextStyle(
-          //importing the grey text colour
-          color: AppColors.greyTextColour,
-          fontSize: 16,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCheckBox() {
-    return Padding(
-      padding: EdgeInsets.only(right: 1),
-      child: Checkbox(
-        value: isRememberMe,
-        //importing the white check colour
-        checkColor: AppColors.checkColorWhite,
-        //importing the blue active status colour
-        activeColor: AppColors.activeStatusColBlue,
-        onChanged: (value) {
-          setState(() {
-            isRememberMe = value;
-          });
-        },
-      ),
     );
   }
 
